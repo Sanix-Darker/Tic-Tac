@@ -33,10 +33,10 @@ A date format and a deadline are given in parameter to the system TicTac which e
 
 ```
 
-## Authors / Contributors:
+### Authors / Contributors:
 <a href="https://github.com/Sanix-Darker">> Sanix Darker </a>
 
-## Captures before and after the dead line with Tic-Tac:
+### Captures before and after the dead line with Tic-Tac:
 <table style="width: 100%;">
 	<tr>
 		<td style="width: 50%">
@@ -48,3 +48,4 @@ A date format and a deadline are given in parameter to the system TicTac which e
 	</tr>
 </table>
 
+**Tic Tac affect any files in your website juste the user render**
