@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<title>Tic Tac</title>
 </head>
 <body>
 <style type="text/css">
 	.headd{
-		margin-top: 100px;
+		margin-top: 10px;
 	}
 	code{
 		display: block;
@@ -16,16 +16,36 @@
 		width: 300px;
 		padding: 12px;
 	}
+	.boxx{
+		margin-top: 110px;
+		padding: 25px;
+		width: 350px;
+		background: rgba(255,255,255,0.5);
+		border: 1px solid rgb(200,200,200);
+		box-shadow: 0 4px 7px rgba(0,0,0,0.5);
+	}
+	.copyright{
+		font-size: 12px;
+	}
+	.far{
+		font-size: 77px;
+	}
+	body{
+		background: url('http://www.hdwallpaperspulse.com/wp-content/uploads/2016/05/19/high-resolution-amazing-image.jpeg') center;
+		background-size: 100%;
+	}
 </style>
 	
 	<center>
-		<h1 class="headd"><i class="fa fa-heart"></i> Tic Tac <i class="fa fa-times"></i></h1>
-		<label>Provide the Dead Line of the project</label><br>
-		<input type="date" id="date" >
-		<input type="button" class="btn btn-success" value="Checkdate" onclick="checkDate(document.getElementById('date').value)">
-
-
-		<code>var day_format = 'en';<br>var day = '04/06/2018';</code>
+		<div class="boxx">
+			<h1 class="far fa-clock"></h1>
+			<h1 class="headd"><i class="fa fa-heart"></i> Tic Tac <i class="fa fa-times"></i></h1>
+			<label>Provide the Dead Line of the project</label><br>
+			<input type="date" id="date" >
+			<input type="button" class="btn btn-success" value="Checkdate" onclick="checkDate(document.getElementById('date').value)">
+			<code>var day_format = 'en';<br>var day = '04/06/2018';</code>
+		</div>
+		<span class="copyright"></span>Studing purpose by <b><i class="fa fa-paw"></i> Sanix darker</b>
 	</center>
 
 <script type="text/javascript">
