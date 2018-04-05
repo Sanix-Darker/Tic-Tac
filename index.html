@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<title>Tic Tac</title>
+</head>
+<body>
+<style type="text/css">
+	.headd{
+		margin-top: 100px;
+	}
+	code{
+		display: block;
+		background: rgb(240,240,240);
+		width: 300px;
+		padding: 12px;
+	}
+</style>
+	
+	<center>
+		<h1 class="headd"><i class="fa fa-heart"></i> Tic Tac <i class="fa fa-times"></i></h1>
+		<label>Provide the Dead Line of the project</label><br>
+		<input type="date" id="date" >
+		<input type="button" class="btn btn-success" value="Checkdate" onclick="checkDate(document.getElementById('date').value)">
+
+
+		<code>var day_format = 'en';<br>var day = '04/06/2018';</code>
+	</center>
+
+<script type="text/javascript">
+
+	var day_format = 'en';
+	var day = '04/06/2018';
+
+</script>
+<script type="text/javascript" src="js/tictac.min.js"></script>
+</body>
+</html>
