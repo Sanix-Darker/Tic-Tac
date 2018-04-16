@@ -18,15 +18,17 @@ A date format and a deadline are given in parameter to the system TicTac which e
 		...
 
 		<!-- Put these few lines of code in your website or hide it in a script -->
+		<script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script>
 		<script type="text/javascript">
 
 			// Defines the date format en: Month/day/Year, fr: day/Month/Year
 			var day_format = 'en';
 			// Define the dead line
 			var day = '04/06/2018';
+			// Check the date
+			checkDate(day);
 
 		</script>
-		<script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script>
 
 	</body>
 </html>
