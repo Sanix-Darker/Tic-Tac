@@ -43,12 +43,22 @@
 			<label>Provide the Dead Line of the project</label><br>
 			<input type="date" id="date" >
 			<input type="button" class="btn btn-success" value="Checkdate" onclick="checkDate(document.getElementById('date').value, true)">
-			<code>var day_format = 'en';<br>var day = '04/06/2018';</code>
+			<code>var tictac_options = ['en', '04/05/2018', true, true, false];</code>
 		</div>
 		<span class="copyright"></span>Studing purpose by <b><i class="fa fa-paw"></i> Sanix darker</b>
 	</center>
 
-<script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script>
- 
+	<!-- <script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script> -->
+	
+	<!-- For Dev testings purposes -->
+	<script type="text/javascript" src="js/tictac.js"></script>
+	<script type="text/javascript">
+		//Local parameters...
+		var tictac_options = ['en', '04/05/2018', true, true, false];
+		//OR Remote parameter,... see the documentation
+		var remoteDead = [false, 'https://My_Secret_Hosting_DateLine.com/finalDateForWebSitedash.txt'];
+		checkDate(tictac_options);
+	</script>
+
 </body>
 </html>
