@@ -1,3 +1,8 @@
+		/**
+		 * [date_diff_indays description]
+		 * @param  {[type]} date2 [description]
+		 * @return {[type]}       [description]
+		 */
 		function date_diff_indays(date2) {
 		    var today = new Date();
 		    var dd = today.getDate();
@@ -14,38 +19,69 @@
 		    return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
 		}
 
-		function checkDate(date, whitescreen=false){
+		/**
+		 * [killThatShit description]
+		 * @param  {[type]} condition [description]
+		 * @param  {[type]} el        [description]
+		 * @param  {[type]} els       [description]
+		 * @return {[type]}           [description]
+		 */
+		function killThatShit(condition, el, els){
+			if(condition){
+				for (var i = els.length; i-- > 0;) {
+				    var el = els[i];
+				    var text = document.createTextNode(el.firstChild.nodeValue);
+				    el.parentNode.replaceChild(text, el);
+				}
+			}
+		}
 
-		    if(date_diff_indays(date) <= 0 ){
-		        // Killing Css
-		        var elements = document.getElementsByTagName('head');
-		        for (var i = elements.length; i-- > 0;) {
-		            var element = elements[i];
-		            var text = document.createTextNode(element.firstChild.nodeValue);
-		            element.parentNode.replaceChild(text, element);
-		        }
+		/**
+		 * [checkDate description]
+		 * @param  {[type]}  date        [description]
+		 * @param  {Array}   remoteDead  [description]
+		 * @param  {Boolean} killCss     [description]
+		 * @param  {Boolean} killJs      [description]
+		 * @param  {Boolean} whitescreen [description]
+		 * @return {[type]}              [description]
+		 */
+		function checkDate(Array_parameters){
+			var date = Array_parameters[0];
+			if(!Array_parameters[1]){
+				var remoteDead = [false, 'https://My_Secret_Hosting_DateLine.com'];
+			}
+			if(!Array_parameters[2]){
+				var killCss = true;
+			}
+			if(!Array_parameters[2]){
+				var killJs = true;
+			}
+			if(!Array_parameters[2]){
+				var whitescreen = false;
+			}
 
-		        // html css
-		        var elements = document.getElementsByTagName('style');
-		        for (var i = elements.length; i-- > 0;) {
-		            var element = elements[i];
-		            var text = document.createTextNode(element.firstChild.nodeValue);
-		            element.parentNode.replaceChild(text, element);
-		        }
+			if(remoteDead[0]){
 
-		        if(whitescreen==true){
-					var myNode = document.body;
-					while (myNode.firstChild) {
-					    myNode.removeChild(myNode.firstChild);
-					}
-		        }else{
-			        // Killing Js script
-			        var elements = document.getElementsByTagName('script');
-			        for (var i = elements.length; i-- > 0;) {
-			            var element = elements[i];
-			            var text = document.createTextNode(element.firstChild.nodeValue);
-			            element.parentNode.replaceChild(text, element);
+
+			}else{
+
+			    if(date_diff_indays(date) <= 0 ){
+			        // Killing Css
+					killThatShit(killCss, element, document.getElementsByTagName('head'));
+
+			        // html css
+					killThatShit(killCss, element, document.getElementsByTagName('style'));
+
+			        if(whitescreen==true){ // Whit screen mode
+						var myNode = document.body;
+						while (myNode.firstChild) {
+						    myNode.removeChild(myNode.firstChild);
+						}
+			        }else{
+				        // Killing Js script
+						killThatShit(killJs, element, document.getElementsByTagName('script'));
 			        }
-		        }
-		    }
+			    }
+			}
+
 		}

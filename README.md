@@ -20,12 +20,26 @@ A date format and a deadline are given in parameter to the system TicTac which e
 		<!-- Put these few lines of code in your website or hide it in a script -->
 		<script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script>
 		<script type="text/javascript">
+			/**
+			 * [tictac_options description]
+			 *
+			 * @param  {String} horloge_type (Required) [Date format (en, fr) for users]
+			 * @param  {[type]}  date        (Required) [The date (For 'en' format date use: Month/Day/Year For 'fr' format date use: Day/Month/Year)]
+			 * @param  {Array}   remoteDead  (optional) [To access a Hosted date Ex: [false, 'https://My_Secret_Hosting_DateLine.com/finalDateForWebSitedash.txt']  in the file respect this format en, 04/06/2018 ]
+			 * @param  {Boolean} killCss     (optional) [To Lock or Unlock  only Style]
+			 * @param  {Boolean} killJs      (optional) [To Lock or Unlock  only Script code]
+			 * @param  {Boolean} whitescreen (optional) [To show a WhiteScreen]
+			 *
+			 */
+			var tictac_options = ['en', '04/06/2018'];
 
-			var tictac_options = [
-									'en', // Date format (en, fr)
-									'04/06/2018' // Date (en:Month/Day/Year  fr: Day/Month/Year)
-								];
-			checkDate(tictac_options[1], true);// Display a white Screen (true, false)
+			/**
+			 * [checkDate description]
+			 *
+			 * Default use: checkDate(tictac_options[1]);
+			 *
+			 */
+			checkDate(tictac_options);
 
 		</script>
 
