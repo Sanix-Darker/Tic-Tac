@@ -1,4 +1,34 @@
 		/**
+		 * [createCORSRequest description]
+		 * @param  {[type]} method [POST, GET]
+		 * @param  {[type]} url    [The URL]
+		 * @return {[type]}        [XMLHttp.... object]
+		 */
+		function createCORSRequest(method, url) {
+		  var xhr = new XMLHttpRequest();
+		  if ("withCredentials" in xhr) {
+
+		    // Check if the XMLHttpRequest object has a "withCredentials" property.
+		    // "withCredentials" only exists on XMLHTTPRequest2 objects.
+		    xhr.open(method, url, true);
+
+		  } else if (typeof XDomainRequest != "undefined") {
+
+		    // Otherwise, check if XDomainRequest.
+		    // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+		    xhr = new XDomainRequest();
+		    xhr.open(method, url);
+
+		  } else {
+
+		    // Otherwise, CORS is not supported by the browser.
+		    xhr = null;
+
+		  }
+		  return xhr;
+		}
+
+		/**
 		 * [date_diff_indays description]
 		 * @param  {[type]} date2 [description]
 		 * @return {[type]}       [description]
@@ -45,30 +75,31 @@
 		 * @return {[type]}              [description]
 		 */
 		function checkDate(Array_parameters){
-			console.log(Array_parameters);
-			var date = Array_parameters[1];
 
-			var killCss = (!Array_parameters[2]) ?  true : Array_parameters[2],
-				killJs = (!Array_parameters[3]) ?  true : Array_parameters[3],
-				whitescreen = (!Array_parameters[4]) ?  false : Array_parameters[4];
+			if(typeof Array_parameters != "undefined"){
+				var date = Array_parameters[1];
 
-			console.log(killJs);
-			console.log(whitescreen);
-			console.log(killCss);
+				var killCss = (!Array_parameters[2]) ?  true : Array_parameters[2],
+					killJs = (!Array_parameters[3]) ?  true : Array_parameters[3],
+					whitescreen = (!Array_parameters[4]) ?  false : Array_parameters[4];
 
+			}else if(typeof remoteDead != "undefined" && remoteDead[0]){ // Going to find a remote file
 
-			if(remoteDead[0]){ // Going to find a remote file
+					var client = createCORSRequest('GET', remoteDead[1]);
+					if (!client) {
+					  throw new Error('CORS not supported');
+					}else{
+						var Array_parameters = client.responseText.split(',');
+						var killCss = (!Array_parameters[2]) ?  true : Array_parameters[2],
+							killJs = (!Array_parameters[3]) ?  true : Array_parameters[3],
+							whitescreen = (!Array_parameters[4]) ?  false : Array_parameters[4];
 
-				var client = new XMLHttpRequest();
-				client.open('GET', remoteDead[1]);
-				client.onreadystatechange = function() {
-					var Array_parameters = client.responseText.split(',');
-					var killCss = (!Array_parameters[2]) ?  true : Array_parameters[2],
-						killJs = (!Array_parameters[3]) ?  true : Array_parameters[3],
-						whitescreen = (!Array_parameters[4]) ?  false : Array_parameters[4];
-				}
-				client.send();
+						client.send();
+					}
 
+			}else{
+				console.log("Please Provide parameters (tictac_options Or remoteDead) For the TicTac API");
+				return false;
 			}
 
 			if(date_diff_indays(date) <= 0 ){

@@ -11,8 +11,8 @@ A date format and a deadline are given in parameter to the system TicTac which e
 <!DOCTYPE html>
 <html>
 <head>
-	<title>A webSite</title>
-	
+	<title>A webSite Title</title>
+
 	<!-- Put these few lines of code in your HEAD of page before ANY script in your website or hide it in a script -->
 	<script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script>
 	<script type="text/javascript">
@@ -33,6 +33,27 @@ A date format and a deadline are given in parameter to the system TicTac which e
 
 		// Show White screen (and kill every thing)
 		//var tictac_options = ['en', '04/05/2018', true, true, true];
+
+
+		// OR REMOTELY : (Not completly stable for now)
+		// var remoteDead = [true, 'http://127.0.0.1/api/finalDateForWebSitedash.txt'];
+
+		/** NOTE: for the Remotely TicTac access, you need to allow the "Access-Control-Allow-Origin" on your website 
+		* [PHP]: <?php header('Access-Control-Allow-Origin: *');
+		*						 header('Access-Control-Allow-Methods': POST, PUT, DELETE, GET, OPTIONS');
+		*						 header('Access-Control-Request-Method': *');
+		*						 header('Access-Control-Allow-Headers': Origin, X-Requested-With, Content-Type, Accept, Authorization');
+		*
+		* [RoR (Ruby On Rails)]: headers['Access-Control-Allow-Origin'] = '*'
+		*						 headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+		*						 headers['Access-Control-Request-Method'] = '*'
+		*						 headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+		*
+		* [Python]: // THe Same logic
+		*
+		* [C#]: // THe Same logic
+		*/
+	
 
 		/**
 		 * [checkDate description]
@@ -57,7 +78,7 @@ A date format and a deadline are given in parameter to the system TicTac which e
 ```
 
 ### Authors / Contributors:
-<a href="https://github.com/Sanix-Darker">> Sanix Darker </a>
+<a href="https://github.com/Sanix-Darker"> Sanix Darker </a>
 
 ### Captures before and after the dead line with Tic-Tac:
 <table style="width: 100%;">

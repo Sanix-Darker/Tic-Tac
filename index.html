@@ -39,10 +39,9 @@
 	<center>
 		<div class="boxx">
 			<h1 class="far fa-clock"></h1>
-			<h1 class="headd"><i class="fa fa-heart"></i> Tic Tac <i class="fa fa-times"></i></h1>
-			<label>Provide the Dead Line of the project</label><br>
-			<input type="date" id="date" >
-			<input type="button" class="btn btn-success" value="Checkdate" onclick="checkDate(document.getElementById('date').value, true)">
+			<h1 class="headd">Tic Tac</h1>
+			<label>Provide a Date in the Past and see</label><br>
+			<input type="date" id="date" value="01/01/2018" style="width: 100%;" >
 			<code>var tictac_options = ['en', '04/05/2018', true, true, false];</code>
 		</div>
 		<span class="copyright"></span>Studing purpose by <b><i class="fa fa-paw"></i> Sanix darker</b>
@@ -50,15 +49,18 @@
 
 	<!-- <script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script> -->
 	
-	<!-- For Dev testings purposes -->
-	<script type="text/javascript" src="js/tictac.js"></script>
+	<!-- For Dev testings purposes Casual test -->
 	<script type="text/javascript">
 		//Local parameters...
-		var tictac_options = ['en', '04/05/2018', true, true, false];
-		//OR Remote parameter,... see the documentation
-		var remoteDead = [false, 'https://My_Secret_Hosting_DateLine.com/finalDateForWebSitedash.txt'];
-		checkDate(tictac_options);
+		var tictac_options = ['en', document.getElementById('date').value];
+		setInterval(function(){
+			console.log(document.getElementById('date').value);
+			tictac_options = ['en', document.getElementById('date').value];
+			checkDate(tictac_options);
+		},2000);
+	
 	</script>
+	<script type="text/javascript" src="js/tictac.js"></script>
 
 </body>
 </html>
