@@ -42,7 +42,7 @@
 			<h1 class="headd">Tic Tac</h1>
 			<label>Provide a Date in the Past and see</label><br>
 			<input type="date" id="date" value="01/01/2018" style="width: 100%;" >
-			<code>var tictac_options = ['en', '04/05/2018', true, true, false];</code>
+			<code>var tictac_options = ['en', '2019/04/05', true, true, false];</code>
 		</div>
 		<span class="copyright"></span>Studing purpose by <b><i class="fa fa-paw"></i> Sanix darker</b>
 	</center>
@@ -52,7 +52,7 @@
 		//Local parameters...
 		var tictac_options = ['en', document.getElementById('date').value];
 		setInterval(function(){
-			console.log(document.getElementById('date').value);
+			//console.log(document.getElementById('date').value);
 			tictac_options = ['en', document.getElementById('date').value];
 			checkDate(tictac_options);
 		},2000);

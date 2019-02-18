@@ -59,9 +59,11 @@
 		function killThatShit(condition, els){
 			if(condition){
 				for (var i = els.length; i-- > 0;) {
-				    var el = els[i];
-				    var text = document.createTextNode(el.firstChild.nodeValue);
-				    el.parentNode.replaceChild(text, el);
+						var el = els[i];
+						if(el.firstChild !== null){
+							var text = document.createTextNode(el.firstChild.nodeValue);
+							el.parentNode.replaceChild(text, el);
+						}
 				}
 			}
 		}
@@ -98,7 +100,7 @@
 					}
 
 			}else{
-				console.log("Please Provide parameters (tictac_options Or remoteDead) For the TicTac API");
+				//console.log("Please Provide parameters (tictac_options Or remoteDead) For the TicTac API");
 				return false;
 			}
 
