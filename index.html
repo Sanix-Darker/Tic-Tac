@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<title>Tic Tac</title>
+	<title>Tic-Tac</title>
 </head>
 <body>
 <style type="text/css">
@@ -20,7 +20,7 @@
 		margin-top: 110px;
 		padding: 25px;
 		width: 350px;
-		background: rgba(255,255,255,0.5);
+		background: rgba(255,255,255,0.85);
 		border: 1px solid rgb(200,200,200);
 		box-shadow: 0 4px 7px rgba(0,0,0,0.5);
 	}
@@ -38,27 +38,33 @@
 	
 	<center>
 		<div class="boxx">
-			<h1 class="far fa-clock"></h1>
-			<h1 class="headd">Tic Tac</h1>
-			<label>Provide a Date in the Past and see</label><br>
+			<h1 class="far fa-clock" style="font-size: 200px;"></h1>
+			<h1 class="headd">Tic-Tac</h1>
+			<label>Provide a Date in the Past and see.</label><br>
 			<input type="date" id="date" value="01/01/2018" style="width: 100%;" >
-			<code>var tictac_options = ['en', '2019/04/05', true, true, false];</code>
+			<span class="copyright"></span>By <b><a href="https://github.com/sanix-darker" target="_blank">🐼 Sanix darker</a></b>
 		</div>
-		<span class="copyright"></span>Studing purpose by <b><i class="fa fa-paw"></i> Sanix darker</b>
+		
 	</center>
-	
+
+	<script src="js/tictac.min.js"></script>
+	<!-- <script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script>-->
 	<!-- For Dev testings purposes Casual test -->
 	<script type="text/javascript">
 		//Local parameters...
-		var tictac_options = ['en', document.getElementById('date').value];
+		var tictac_options = [document.getElementById('date').value];
 		setInterval(function(){
 			//console.log(document.getElementById('date').value);
-			tictac_options = ['en', document.getElementById('date').value];
+			tictac_options = [document.getElementById('date').value];
 			checkDate(tictac_options);
 		},2000);
-	
+
+
+		// "MONTH / DAY / YEAR", killCss, killJs, WhiteScreen
+		// var tictac_options = ['01/01/2019', false, false, false];
+		// checkDate(null, [true, 'http://127.0.0.1:8081//finalDateForWebSitedash.txt']);
+		// checkDate(tictac_options);
 	</script>
-	<script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script>
 
 </body>
 </html>
