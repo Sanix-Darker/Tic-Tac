@@ -1,7 +1,8 @@
 <img src="img/icone.jpg" style="width:20px" >
 
 # Tic-Tac
-Put a deadline on a project or just activate/desactivate it remotely For personnals reasons (Never get paid on a project, etc...).
+## Client not paid ?
+Put a deadline on a project or just activate/desactivate it remotely For personnals reasons (Never get paid on a project, etc...), kill CSS, JS, show a whiteScreen or add opacity to the body tag and decrease it every day until their site completely fades away.
 
 **NOTE: "Am not responsible in the bad use of this project"**
 
@@ -99,6 +100,10 @@ headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Typ
 </html>
 ```
 
+### Another sources
+
+-[Decrease-opacity-feature](https://github.com/kleampa/not-paid)
+
 ### Author:
 
 - [Sanix-Darker](https://github.com/Sanix-Darker)
@@ -115,4 +120,4 @@ headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Typ
 	</tr>
 </table>
 
-**🐼PANDA:** What's really coul with Tic Tac is that, it affect "any files" in your website, he just Bichakalla the user's rendering.
+**🐼PANDA:** What's really coul with Tic Tac is that, it affect "any files" in your website, he just "Bichakalla" the user's rendering.

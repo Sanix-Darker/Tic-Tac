@@ -2,7 +2,6 @@
 		 * [date_diff_indays description]
 		 * @param  {[type]} format [en or fr]
 		 * @param  {[type]} date2 [description]
-		 * @return {[type]}       [description]
 		 */
 		function date_diff_indays(date2) {
 
@@ -26,7 +25,6 @@
 		 * @param  {[type]} condition [description]
 		 * @param  {[type]} el        [description]
 		 * @param  {[type]} els       [description]
-		 * @return {[type]}           [description]
 		 */
 		function killThatShit(condition, els){
 			if(condition){
@@ -50,9 +48,32 @@
 
 					//console.log("typeof whitescreen: ", typeof(whitescreen));
 			if(date_diff_indays(date) <= 0 ){
+
+				/* --------------------------------------------------------------------------------------------------------*/
+				/* This code will decrease the opacity of the app....
+				/* A Code from https://github.com/kleampa/not-paid/ 
+				/* By kleampa
+				/* change these variables as you wish */
+				var due_date = date;
+				var days_deadline = 10;
+				/* stop changing here */
+				var current_date = new Date();
+				var utc1 = Date.UTC(due_date.getFullYear(), due_date.getMonth(), due_date.getDate());
+				var utc2 = Date.UTC(current_date.getFullYear(), current_date.getMonth(), current_date.getDate());
+				var days = Math.floor((utc2 - utc1) / (1000 * 60 * 60 * 24));
+				if(days > 0) {
+					var days_late = days_deadline-days;
+					var opacity = (days_late*100/days_deadline)/100;
+						opacity = (opacity < 0) ? 0 : opacity;
+						opacity = (opacity > 1) ? 1 : opacity;
+					if(opacity >= 0 && opacity <= 1) {
+						document.getElementsByTagName("BODY")[0].style.opacity = opacity;
+					}
+				}
+				/* --------------------------------------------------------------------------------------------------------*/
+
 				// Killing Css
 				killThatShit(killCss, document.getElementsByTagName('head'));
-
 				// killing html css
 				killThatShit(killCss, document.getElementsByTagName('style'));
 
@@ -69,14 +90,12 @@
 			}
 		}
 
-
 		/**
 		 * [checkDate description]
 		 * @param  {[type]}  date        [description]
 		 * @param  {Boolean} killCss     [description]
 		 * @param  {Boolean} killJs      [description]
 		 * @param  {Boolean} whitescreen [description]
-		 * @return {[type]}              [description]
 		 */
 		function checkDate(Array_parameters, remoteDead=null){
 			
