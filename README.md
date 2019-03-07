@@ -100,7 +100,7 @@ headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Typ
 </html>
 ```
 
-### Another sources
+### Another ressources
 
 -[Decrease-opacity-feature](https://github.com/kleampa/not-paid)
 

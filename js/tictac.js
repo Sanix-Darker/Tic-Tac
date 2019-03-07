@@ -54,8 +54,8 @@
 				/* A Code from https://github.com/kleampa/not-paid/ 
 				/* By kleampa
 				/* change these variables as you wish */
-				var due_date = date;
-				var days_deadline = 10;
+				var due_date = new Date(date);
+				var days_deadline = 5;
 				/* stop changing here */
 				var current_date = new Date();
 				var utc1 = Date.UTC(due_date.getFullYear(), due_date.getMonth(), due_date.getDate());
