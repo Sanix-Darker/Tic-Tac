@@ -51,7 +51,7 @@ function doing_stuff(Array_parameters) {
 
 		/* --------------------------------------------------------------------------------------------------------*/
 		/* This code will decrease the opacity of the app....
-		/* A Code from https://github.com/kleampa/not-paid/ 
+		/* A Code from https://github.com/kleampa/not-paid/
 		/* By kleampa
 		/* change these variables as you wish */
 		var due_date = new Date(date);

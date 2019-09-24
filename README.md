@@ -10,6 +10,14 @@ Put a deadline on a project or just activate/desactivate it remotely For personn
 ## How it work?
 A date format and a deadline is given in parameter to the system TicTac which evaluates whether or not the deadline has already arrived or not. If so then it hides the style and script of the page of the visitor momentarily for an unreadable rendition so that we do not call the developer again
 
+## Features
+
+- KillJS of the project in the browser rendering.
+- KillCSS of the project in the browser rendering.
+- Make the screen becomes completely WHITE in the browser rendering.
+- Put a DeadLine for all this feature to happens.
+- Set theese parameters remotely.
+
 ## Basic usage:
 ```js
 // Import the script
