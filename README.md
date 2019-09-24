@@ -1,6 +1,7 @@
-<img src="img/icone.jpg" style="width:20px" >
+<img src="logo.jpg"  >
 
 # Tic-Tac
+
 ## Client not paid ?
 Put a deadline on a project or just activate/desactivate it remotely For personnals reasons (Never get paid on a project, etc...), kill CSS, JS, show a whiteScreen or add opacity to the body tag and decrease it every day until their site completely fades away.
 
@@ -9,16 +10,16 @@ Put a deadline on a project or just activate/desactivate it remotely For personn
 ## How it work?
 A date format and a deadline is given in parameter to the system TicTac which evaluates whether or not the deadline has already arrived or not. If so then it hides the style and script of the page of the visitor momentarily for an unreadable rendition so that we do not call the developer again
 
-## How to use it:
-
-### Basic usage:
+## Basic usage:
 ```js
+// Import the script
+// then
 // "MONTH / DAY / YEAR"
 // 07/07/2019: the date
 checkDate(['07/07/2019']);
 ```
 
-### More options
+## More options
 ```js
 /**
 * [tictac_options description]
@@ -29,13 +30,15 @@ checkDate(['07/07/2019']);
 */
 var tictac_options = ['07/07/2019'];
 
-// "MONTH / DAY / YEAR",   true,    true,     false
-// Kill CSS, Kill JS, don't show White screen
-//var tictac_options = ['04/05/2019', true, true, false];
+// CASE 1 :
+// params: "MONTH / DAY / YEAR",   true,    true,     false
+// What will be done: Kill CSS, Kill JS, don't show White screen
+// var tictac_options = ['04/05/2019', true, true, false];
 
-// "MONTH / DAY / YEAR",   true,    true,     true
-// Show White screen (and kill every thing)
-//var tictac_options = ['04/05/2019', true, true, true];
+// CASE 2 :
+// params: "MONTH / DAY / YEAR",   true,    true,     true
+// What will be done: Show White screen (and kill every thing)
+// var tictac_options = ['04/05/2019', true, true, true];
 
 /**
 * [checkDate description]
@@ -49,61 +52,31 @@ var tictac_options = ['01/01/2019', false, false, true];
 checkDate(tictac_options);
 
 // Remote Mode
-var remoteDead = [true, 'http://127.0.0.1:8081//finalDateForWebSitedash.txt'];
+// http://127.0.0.1:8081 is a host you specify where the file with all parameters to fetch will be found
+var remoteDead = [true, 'http://127.0.0.1:8081/finalDateForWebSitedash.txt'];
 checkDate(null, [true, remoteDead);
 ```
+## Complete integration example
 
-### IMPORTANT NOTE (For the remote mode, to avoid CORS issues):
-
-**NOTE:** For the Remotely TicTac access, you need to allow the "Access-Control-Allow-Origin" on your Remote server where you saved the file containing the date of your deadline and other parameters, see ./finalDateForWebSitedash.txt:.
-
-- [PHP]:
-```php
-<?php
-
-header('Access-Control-Allow-Origin': '*');
-header('Access-Control-Request-Method': '*');
-header('Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-?>
-```
-
-- [RoR (Ruby On Rails)]:
-```ruby
-
-headers['Access-Control-Allow-Origin'] = '*'
-headers['Access-Control-Request-Method'] = '*'
-headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-```
-
-- [Python]: ... The Same logic
-
-- [C# (ASP)]: ... The Same logic
-
-### Complete integration example
-
+Example of integration
 ```html
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>A webSite Title</title>
+<head>
+	<title>A webSite Title</title>
 
-		<!-- Put these few lines of code in your HEAD tag of page before ANY script in your website or you can hide it in a personnal script -->
-		<!-- First, import tictac and then config your deadline date -->
-		<script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script>
-		<script type="text/javascript">
-			checkDate(['12/27/2019']);
-		</script>
-	</head>
-	<body>
-		...The Website content...
-	</body>
-</html>
+	<!-- Put these few lines of code in your HEAD tag of page before ANY script in your website or you can hide it in a personnal script -->
+	<!-- First, import tictac and then config your deadline date -->
+	<script src="https://rawgit.com/Sanix-Darker/Tic-Tac/master/js/tictac.min.js"></script>
+	<script type="text/javascript">
+		checkDate(['12/27/2019']);
+	</script>
+</head>
+<body>
+	...The Website content...
+</body>
 ```
 
-### NB: What's really coul with Tic Tac is that, it affect "any files" in your website, he just "Bichakalla" the user's rendering.
+##### NB: What's really coul with Tic Tac is that, it affect "any files" in your website, he just "Bichakalla" the user's rendering.
 
-
-### Author:
+## Author
 
 - [Sanix-Darker](https://github.com/Sanix-Darker)
-

@@ -1,0 +1,27 @@
+.headd{
+    margin-top: 10px;
+}
+code{
+    display: block;
+    background: rgb(240,240,240);
+    width: 300px;
+    padding: 12px;
+}
+.boxx{
+    margin-top: 110px;
+    padding: 25px;
+    width: 350px;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgb(200,200,200);
+    box-shadow: 0 4px 7px rgba(0,0,0,0.5);
+}
+.copyright{
+    font-size: 12px;
+}
+.far{
+    font-size: 77px;
+}
+body{
+    background: url('http://www.hdwallpaperspulse.com/wp-content/uploads/2016/05/19/high-resolution-amazing-image.jpeg') center;
+    background-size: 100%;
+}
