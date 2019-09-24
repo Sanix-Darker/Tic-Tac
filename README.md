@@ -100,24 +100,10 @@ headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Typ
 </html>
 ```
 
-### Another ressources
+### NB: What's really coul with Tic Tac is that, it affect "any files" in your website, he just "Bichakalla" the user's rendering.
 
--[Decrease-opacity-feature](https://github.com/kleampa/not-paid)
 
 ### Author:
 
 - [Sanix-Darker](https://github.com/Sanix-Darker)
 
-### Renders before and after Tic-Tac operate:
-<table style="width: 100%;">
-	<tr>
-		<td style="width: 50%">
-			<img src="img/capture.PNG" >
-		</td>
-		<td >
-			<img src="img/capture1.PNG" >
-		</td>
-	</tr>
-</table>
-
-**🐼PANDA:** What's really coul with Tic Tac is that, it affect "any files" in your website, he just "Bichakalla" the user's rendering.
