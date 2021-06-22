@@ -62,8 +62,13 @@ checkDate(tictac_options);
 // Remote Mode
 // http://127.0.0.1:8081 is a host you specify where the file with all parameters to fetch will be found
 var remoteDead = [true, 'http://127.0.0.1:8081/finalDateForWebSitedash.txt'];
-checkDate(null, [true, remoteDead);
+checkDate(null, remoteDead);
 ```
+An example of the remote file :
+```
+01/01/2019, true, true, true
+```
+
 ## Complete integration example
 
 Example of integration
